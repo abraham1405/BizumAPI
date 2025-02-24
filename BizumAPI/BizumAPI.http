@@ -1,0 +1,6 @@
+@BizumAPI_HostAddress = http://localhost:5253
+
+GET {{BizumAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
