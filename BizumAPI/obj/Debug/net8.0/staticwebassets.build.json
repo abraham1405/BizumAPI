@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "GfPLfyf3gtN39NJMtur4RzJRSxKtCOkkgFKGvt8Ua0Q=",
+  "Hash": "udC5xztWNTOpG882bys/8vucyjzTNgmKCzot60DESbU=",
   "Source": "BizumAPI",
   "BasePath": "_content/BizumAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

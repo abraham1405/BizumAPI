@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using System;
 using System.Data;
 using System.Xml;
+using System.Xml.Linq;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -15,19 +16,25 @@ public class XmlController : ControllerBase
         _connectionString = configuration.GetConnectionString("DefaultConnection");
     }
 
-    [HttpGet("execute")]
-    public IActionResult ExecuteProcedure([FromQuery] Guid userId) // Usar Guid en lugar de string
+    [HttpGet("execute2")]
+    public IActionResult ExecuteProcedure([FromQuery] string userId, [FromQuery] string p1) 
     {
+        // var xmlResponse = new XElement("Message", "Hola Mundo");
+        // return Content(xmlResponse.ToString(), "application/xml");
+        
         try
         {
+            //  Guid userGuid = new Guid(userId);
+            // return Ok($"GUID válido: {userGuid}");
+
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand("sp_GetUserData", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@userId", userId); // Asegúrate de usar el nombre correcto del parámetro
-
+                    command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@p1", p1);
                     using (var reader = command.ExecuteXmlReader())
                     {
                         if (reader != null && reader.Read())
@@ -47,5 +54,4 @@ public class XmlController : ControllerBase
 
         return BadRequest("No XML data returned.");
     }
-
 }
