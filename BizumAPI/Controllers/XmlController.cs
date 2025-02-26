@@ -17,15 +17,11 @@ public class XmlController : ControllerBase
     }
 
     [HttpGet("execute2")]
-    public IActionResult ExecuteProcedure([FromQuery] string userId, [FromQuery] string p1) 
+    public IActionResult ExecuteProcedure([FromQuery] string userId) 
     {
-        // var xmlResponse = new XElement("Message", "Hola Mundo");
-        // return Content(xmlResponse.ToString(), "application/xml");
         
         try
         {
-            //  Guid userGuid = new Guid(userId);
-            // return Ok($"GUID válido: {userGuid}");
 
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -34,7 +30,7 @@ public class XmlController : ControllerBase
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@userId", userId);
-                    command.Parameters.AddWithValue("@p1", p1);
+                    //command.Parameters.AddWithValue("@p1", p1);
                     using (var reader = command.ExecuteXmlReader())
                     {
                         if (reader != null && reader.Read())
