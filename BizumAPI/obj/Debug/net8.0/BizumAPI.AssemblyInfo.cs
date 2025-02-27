@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BizumAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3db62f86c81f4ed998086ba941b1de62c0a2b6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c08bfc46535d4d002af13fadd920592d6e7bd89")]
 [assembly: System.Reflection.AssemblyProductAttribute("BizumAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BizumAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
